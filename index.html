@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI 개발자 루나의 포트폴리오 — 실제 운영·개발 중인 프로젝트를 소개합니다." />
+  <title>Luna's Portfolio — AI Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       좌측 사이드바 (소셜 아이콘 세로 배열)
+  ══════════════════════════════════════════ -->
+  <aside class="sidebar" aria-label="사이드 소셜 링크">
+    <div class="sidebar-line"></div>
+    <a href="https://github.com/karin01" target="_blank" rel="noopener noreferrer" class="sidebar-icon" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.93.84.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@Lunastarin" target="_blank" rel="noopener noreferrer" class="sidebar-icon" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/Lunastarin" target="_blank" rel="noopener noreferrer" class="sidebar-icon" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
+    <a href="mailto:jungwon1023@gmail.com" class="sidebar-icon" aria-label="이메일 보내기">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <div class="sidebar-line"></div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+       헤더 네비게이션
+  ══════════════════════════════════════════ -->
+  <header class="site-header">
+    <a class="logo" href="#top">Portfolio</a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#top" class="nav-link is-active">Home</a>
+      <a href="#about" class="nav-link">About Me</a>
+      <a href="#projects" class="nav-link">Work</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="메뉴 열기">☰</button>
+  </header>
+
+  <main id="top">
+
+    <!-- ══════════════════════════════════════════
+         히어로 섹션
+    ══════════════════════════════════════════ -->
+    <section class="hero">
+      <!-- 배경 장식 구체들 -->
+      <div class="orb-group" aria-hidden="true">
+        <div class="orb orb-main">
+          <div class="orb-ring orb-ring-1"></div>
+          <div class="orb-ring orb-ring-2"></div>
+          <div class="orb-ring orb-ring-3"></div>
+        </div>
+        <div class="orb orb-sm orb-sm-1"></div>
+        <div class="orb orb-sm orb-sm-2"></div>
+        <img src="assets/orbs.png" class="orb-img" alt="" aria-hidden="true" />
+      </div>
+
+      <!-- 히어로 텍스트 -->
+      <div class="hero-content">
+        <p class="hero-eyebrow">🌟 AI Developer · Full-Stack · Automation</p>
+        <h1 class="hero-title">
+          <span class="hero-line-1">AI로 세상을 바꾸는</span>
+          <span class="hero-line-2">개발자, <span class="hero-name-grad">루나</span>입니다.</span>
+          <span class="hero-line-3">
+            <span id="typing-target">사이버펑크 MUD 게임부터<span class="typing-cursor"></span></span>
+          </span>
+        </h1>
+        <p class="hero-lead">
+          실제 사용자가 쓰는 서비스를 만드는 것을 좋아합니다.
+          Flask·Vite·Firebase·텔레그램 봇 등 다양한 기술로
+          아이디어를 현실로 바꾸고 있습니다.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">내 작업 보러가기</a>
+          <a class="btn btn-ghost" href="#contact">연락하기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         소개 섹션
+    ══════════════════════════════════════════ -->
+    <section id="about" class="section about-section">
+      <!-- 캐릭터 + 원형 배경 -->
+      <div class="about-visual">
+        <div class="about-circle-bg"></div>
+        <img src="assets/character.png" alt="캐릭터 일러스트" class="about-character" />
+        <img src="assets/crystals.png" alt="" class="about-crystals" aria-hidden="true" />
+        <!-- 작은 박스 카드들 -->
+        <div class="about-badge about-badge-1" aria-hidden="true">
+          <span class="badge-num">6+</span>
+          <span class="badge-lbl">Projects</span>
+        </div>
+        <div class="about-badge about-badge-2" aria-hidden="true">
+          <span class="badge-num">AI</span>
+          <span class="badge-lbl">Powered</span>
+        </div>
+      </div>
+
+      <!-- About 텍스트 -->
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2>안녕하세요,<br />저는 루나입니다! 👋</h2>
+        <p>
+          사용자가 실제로 쓰는 서비스를 만드는 것을 좋아하는 AI 개발자입니다.
+          사이버펑크 MUD 게임 엔진부터 반려동물 플랫폼, 주식 AI 분석 도구까지
+          다양한 분야를 탐구하며 하나씩 완성해가고 있습니다.
+        </p>
+        <p>
+          Firebase·Flask·FastAPI·Vite 등의 기술을 활용하며,
+          텔레그램 봇으로 실생활 자동화를 즐깁니다.
+        </p>
+        <a class="btn btn-primary" href="#projects">read more</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         프로젝트 섹션
+    ══════════════════════════════════════════ -->
+    <section id="projects" class="section projects-section">
+      <p class="section-label section-label--center">Work</p>
+      <h2 class="section-title-center">My recent work</h2>
+
+      <!-- 필터 탭 -->
+      <div class="filter-bar" role="tablist" aria-label="프로젝트 필터">
+        <button type="button" class="filter-btn is-active" data-filter="all">전체</button>
+        <button type="button" class="filter-btn" data-filter="live">운영 중</button>
+        <button type="button" class="filter-btn" data-filter="local">로컬</button>
+      </div>
+
+      <!-- 프로젝트 카드 그리드 -->
+      <div class="projects-showcase">
+        <div class="project-grid" id="project-grid">
+          <!-- JS에서 카드 삽입 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         기술 스택 섹션
+    ══════════════════════════════════════════ -->
+    <section id="skills" class="section skills-section">
+      <p class="section-label section-label--center">Stack</p>
+      <h2 class="section-title-center">기술 스택</h2>
+      <div class="skills-grid" id="skills-grid">
+        <!-- JS에서 삽입 -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         연락 섹션
+    ══════════════════════════════════════════ -->
+    <section id="contact" class="section contact-section">
+      <!-- 하단 행성 장식 -->
+      <div class="contact-planet" aria-hidden="true"></div>
+      <div class="contact-rocket" aria-hidden="true">🚀</div>
+
+      <div class="contact-grid">
+        <!-- 왼쪽: 연락 정보 -->
+        <div class="contact-info">
+          <p class="section-label">Get in touch</p>
+          <h2>연락하기</h2>
+          <p class="contact-desc">
+            프로젝트 협업, 피드백, 또는 그냥 안녕 인사라도 —
+            언제든지 연락해 주세요 😊
+          </p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon">📍</span>
+              <span>대한민국 · 서울</span>
+            </li>
+            <li>
+              <a href="mailto:jungwon1023@gmail.com">
+                <span class="contact-icon">✉️</span>
+                <span>jungwon1023@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- 오른쪽: 메시지 폼 -->
+        <div class="contact-form-wrap">
+          <h3>Send me a message</h3>
+          <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <input type="text" id="form-name" placeholder="Name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <input type="email" id="form-email" placeholder="Email" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <textarea id="form-message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Send message</button>
+            <p class="form-notice" id="form-notice" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       푸터
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="푸터 메뉴">
+      <a href="#top">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-divider"></div>
+    <div class="footer-social" aria-label="소셜 링크">
+      <!-- GitHub -->
+      <a href="https://github.com/karin01" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.93.84.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+      </a>
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@Lunastarin" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/Lunastarin" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:jungwon1023@gmail.com" class="social-btn" aria-label="이메일">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Luna's Portfolio · All rights reserved</p>
+  </footer>
+
+  <!-- 스크린샷 라이트박스 -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" hidden>
+    <button type="button" class="lightbox-close" aria-label="닫기">×</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
