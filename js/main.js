@@ -345,11 +345,11 @@ function initTypingEffect() {
   if (!target) return;
 
   const phrases = [
-    "사이버펑크 MUD 게임부터",
-    "AI 텔레그램 봇까지",
-    "반려동물 플랫폼도 만들었어요",
-    "주식 AI 뷰어도 있습니다 📈",
-    "아이디어를 현실로 바꿉니다",
+    "바이브 코딩으로 시작했어요 ✨",
+    "코드 한 줄 몰랐는데 만들었습니다",
+    "AI가 짜고 저는 아이디어 냅니다 🧠",
+    "비개발자의 반란입니다 🤙",
+    "그래도 실제로 돌아갑니다 😅",
   ];
 
   const cursor = target.querySelector(".typing-cursor");
