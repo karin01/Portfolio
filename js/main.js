@@ -271,7 +271,12 @@ function createProjectCard(project) {
     extras.appendChild(btn);
   });
 
-  if (extras.childElementCount > 0) article.appendChild(extras);
+  // 버튼/링크가 없어도 푸터 박스는 동일하게 유지 (옆 카드와 하단 스타일 통일)
+  if (extras.childElementCount === 0) {
+    extras.classList.add("project-card-extras--empty");
+    extras.setAttribute("aria-hidden", "true");
+  }
+  article.appendChild(extras);
   return article;
 }
 

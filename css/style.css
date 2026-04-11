@@ -882,17 +882,23 @@ article.project-card:hover .project-card-thumb::before { opacity: 1; }
   min-height: calc(0.76rem * 1.45 * 2);
 }
 
-/* 카드 하단 extras — 링크 영역과 구분선 정렬 */
+/* 카드 하단 extras — 본문(.project-card-body)과 좌우 패딩 동일 */
 .project-card-extras {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.75rem 1.25rem 0.9rem;
+  padding: 0.75rem 1.35rem 0.9rem;
   border-top: 1px solid var(--glass-border);
   background: rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
-  min-height: calc(0.75rem + 0.46rem + 0.9rem);
+  /* 스크린샷 버튼 한 줄 높이에 맞춤 — 빈 푸터도 같은 박스 높이 유지 */
+  min-height: calc(0.75rem + 2.05rem + 0.9rem);
+}
+
+/* 링크·버튼이 없을 때: 구분선·배경만 같은 높이로 표시 */
+.project-card-extras--empty {
+  pointer-events: none;
 }
 
 .card-extra-btn {
