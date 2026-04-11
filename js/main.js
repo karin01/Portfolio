@@ -78,6 +78,18 @@ const portfolioProjects = [
     ],
   },
   {
+    id: "network-device-dashboard",
+    type: "local",
+    title: "네트워크 장치 대시보드",
+    description:
+      "LAN 장치 탐지 목록·온오프라인 요약·추이 차트. @Network-IP-Search로 IP 부분 검색 필터.",
+    url: "network-dashboard.html",
+    icon: "📡",
+    tags: ["HTML", "데모", "모니터링"],
+    thumb: null,
+    urlCaption: "정적 데모 · 같은 폴더에서 network-dashboard.html 열기",
+  },
+  {
     id: "gmail-bot",
     type: "local",
     title: "Gmail → 텔레그램 봇",
@@ -191,7 +203,6 @@ function createProjectCard(project) {
   const article = document.createElement("article");
   article.className = "project-card" + (clickable ? "" : " project-card--static");
   article.dataset.filter = project.type;
-  article.style.position = "relative";
 
   const thumbHtml = buildThumbHtml(project);
   const bodyHtml  = buildBodyHtml(project, footLine, typeTag, tagsHtml);

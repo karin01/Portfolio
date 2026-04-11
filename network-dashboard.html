@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네트워크 장치 대시보드</title>
+  <link rel="stylesheet" href="css/network-dashboard.css" />
+</head>
+<body>
+  <div class="dash-app">
+    <header class="dash-header">
+      <div class="dash-header-text">
+        <h1>네트워크 장치 대시보드</h1>
+        <p class="dash-sub">장치 탐지 및 연결 상태 실시간 모니터링</p>
+      </div>
+      <div class="dash-summary">
+        <div class="summary-card summary-online"><span class="lbl">온라인 장치</span><strong id="count-online">0</strong></div>
+        <div class="summary-card summary-offline"><span class="lbl">오프라인 장치</span><strong id="count-offline">0</strong></div>
+        <div class="summary-card summary-total"><span class="lbl">총 감지 장치</span><strong id="count-total">0</strong></div>
+      </div>
+      <div class="dash-meta-row">
+        <div class="dash-sys" id="dash-sys-info"></div>
+        <div class="dash-actions">
+          <button type="button" class="btn-dash" id="btn-rescan">다시 스캔</button>
+          <button type="button" class="btn-dash" id="btn-csv">CSV</button>
+          <button type="button" class="btn-dash" id="btn-info">장비 정보</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="dash-charts">
+      <div class="panel">
+        <h2>온/오프라인 장치 수 추이</h2>
+        <canvas id="trend-chart" width="640" height="220" aria-label="장치 수 추이 차트"></canvas>
+      </div>
+      <div class="panel">
+        <h2>장비 정보 수집 현황</h2>
+        <div class="collect-stats" id="collect-stats"></div>
+        <div class="failure-box">
+          <span class="failure-title">실패 사유</span>
+          <p id="failure-reasons">아직 수집 결과가 없습니다</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dash-table-section">
+      <div class="table-section-head">
+        <h2>탐지된 장치 목록</h2>
+        <!-- @Network-IP-Search: IP 열 기준 필터 -->
+        <div class="network-ip-search" data-component="Network-IP-Search">
+          <label class="visually-hidden" for="network-ip-search-input">IP 주소 검색</label>
+          <span class="network-ip-search-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </span>
+          <input
+            type="search"
+            id="network-ip-search-input"
+            class="network-ip-search-input"
+            placeholder="IP 검색 (예: 192.168.0)"
+            autocomplete="off"
+            spellcheck="false"
+            aria-describedby="network-ip-search-hint"
+          />
+          <span id="network-ip-search-hint" class="network-ip-search-hint">부분 일치 · 대소문자 무관</span>
+        </div>
+        <span class="data-source" id="data-source-label">devices.example.yaml</span>
+      </div>
+      <div class="table-wrap">
+        <table class="device-table">
+          <thead>
+            <tr>
+              <th>상태</th>
+              <th>IP</th>
+              <th>MAC</th>
+              <th>벤더</th>
+              <th>열린 포트</th>
+              <th>모델</th>
+              <th>시리얼</th>
+              <th>호스트명</th>
+              <th>마지막 감지</th>
+            </tr>
+          </thead>
+          <tbody id="device-tbody"></tbody>
+        </table>
+      </div>
+      <p class="table-empty" id="table-empty-msg" hidden>검색 조건에 맞는 장치가 없습니다.</p>
+    </section>
+  </div>
+  <script src="js/network-dashboard.js"></script>
+</body>
+</html>

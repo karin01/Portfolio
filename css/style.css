@@ -33,6 +33,8 @@
 
   --radius:         20px;
   --radius-sm:      12px;
+  /* Work 섹션: 모든 카드 썸네일 동일 비율 */
+  --project-thumb-ratio: 16 / 9;
   --font-display:   "Outfit", system-ui, sans-serif;
   --font-body:      "Noto Sans KR", system-ui, sans-serif;
   --shadow:         0 24px 60px rgba(0, 0, 0, 0.6);
@@ -673,17 +675,21 @@ main {
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
 }
 
-/* 프로젝트 그리드 — 레퍼런스처럼 가로 배열 */
+/* 프로젝트 그리드 — 같은 행 카드 높이 통일 */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1.25rem;
+  align-items: stretch;
 }
 
 /* 프로젝트 카드 */
 article.project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  min-height: 0;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
@@ -700,6 +706,8 @@ article.project-card:nth-child(3) { animation-delay: 0.19s; }
 article.project-card:nth-child(4) { animation-delay: 0.26s; }
 article.project-card:nth-child(5) { animation-delay: 0.33s; }
 article.project-card:nth-child(6) { animation-delay: 0.4s; }
+article.project-card:nth-child(7) { animation-delay: 0.47s; }
+article.project-card:nth-child(8) { animation-delay: 0.54s; }
 
 @keyframes cardIn {
   to { opacity: 1; transform: translateY(0); }
@@ -727,7 +735,8 @@ article.project-card:hover::before { opacity: 1; }
 .project-card-link {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   text-decoration: none;
   color: inherit;
 }
@@ -741,19 +750,22 @@ article.project-card:hover::before { opacity: 1; }
   color: transparent;
 }
 
-/* 썸네일 */
+/* 썸네일 — 사진·아이콘 카드 동일 비율·동일 폭 */
 .project-card-thumb {
-  height: 160px;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: var(--project-thumb-ratio);
   background: linear-gradient(145deg, #0d1240 0%, #060c2e 100%);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   overflow: hidden;
 }
 
-.project-card-thumb--photo { height: 180px; align-items: stretch; }
+.project-card-thumb--photo {
+  align-items: stretch;
+}
 
 .project-card-thumb:not(.project-card-thumb--photo)::after {
   content: "";
@@ -777,9 +789,10 @@ article.project-card:hover::before { opacity: 1; }
 article.project-card:hover .project-card-thumb::before { opacity: 1; }
 
 .project-card-img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
   display: block;
 }
 
@@ -792,7 +805,8 @@ article.project-card:hover .project-card-thumb::before { opacity: 1; }
 
 .project-card-body {
   padding: 1.25rem 1.35rem;
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
 }
@@ -802,6 +816,9 @@ article.project-card:hover .project-card-thumb::before { opacity: 1; }
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 0.75rem;
+  /* 태그 2줄까지 자리 확보 → 옆 카드와 첫 본문 줄 맞춤 */
+  min-height: calc(0.68rem * 2 + 0.2rem * 2 + 0.45rem);
+  align-content: flex-start;
 }
 
 .tag {
@@ -826,35 +843,56 @@ article.project-card:hover .project-card-thumb::before { opacity: 1; }
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
+  line-height: 1.3;
   margin-bottom: 0.55rem;
   letter-spacing: -0.02em;
   color: var(--text-bright);
   transition: all var(--t);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.1rem * 1.3 * 2);
 }
 
 .project-card-desc {
   font-size: 0.87rem;
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
-  flex: 1;
   line-height: 1.7;
+  margin-bottom: 0.75rem;
+  flex: 1 1 auto;
+  min-height: calc(0.87rem * 1.7 * 4);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .project-card-url {
   font-size: 0.76rem;
+  line-height: 1.45;
   color: var(--cyan);
-  word-break: break-all;
+  word-break: break-word;
   opacity: 0.8;
+  flex-shrink: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(0.76rem * 1.45 * 2);
 }
 
-/* 카드 하단 extras */
+/* 카드 하단 extras — 링크 영역과 구분선 정렬 */
 .project-card-extras {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.45rem;
   padding: 0.75rem 1.25rem 0.9rem;
   border-top: 1px solid var(--glass-border);
   background: rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  min-height: calc(0.75rem + 0.46rem + 0.9rem);
 }
 
 .card-extra-btn {
