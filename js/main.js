@@ -51,11 +51,14 @@ const portfolioProjects = [
   },
   {
     id: "stock-viewer",
-    type: "local",
+    type: "live",
     title: "주식 AI 뷰어",
     description:
       "거래대금·거래량 순위, 종목 차트, AI 분석. 텔레그램으로 /chart 명령 응답.",
-    url: "http://127.0.0.1:7654/",
+    url: "https://github.com/karin01/MyStock",
+    links: [
+      { url: "http://127.0.0.1:8765", label: "로컬 웹 UI (실행 후)" },
+    ],
     icon: "📈",
     tags: ["FastAPI", "AI", "주식"],
     thumb: "assets/stock-viewer.png",
@@ -72,10 +75,6 @@ const portfolioProjects = [
     icon: "🎲",
     tags: ["PWA", "게임", "Python"],
     thumb: "assets/text-crpg.png",
-    links: [
-      { url: "http://localhost:5173/", label: "프론트(5173)" },
-      { url: "http://127.0.0.1:8000/", label: "엔진(8000)" },
-    ],
   },
   {
     id: "network-device-dashboard",
@@ -265,7 +264,10 @@ function createProjectCard(project) {
     btn.setAttribute("aria-label", `${project.title} 추가 이미지 ${i + 1}`);
     const img = document.createElement("img");
     img.src = src; img.alt = "";
-    img.width = 120; img.height = 68; img.loading = "lazy";
+    /* 레이아웃 힌트(실제 박스 크기는 CSS .gallery-thumb-btn) */
+    img.width = 104;
+    img.height = 60;
+    img.loading = "lazy";
     btn.appendChild(img);
     btn.addEventListener("click", () => openLightbox(src, project.title));
     extras.appendChild(btn);
