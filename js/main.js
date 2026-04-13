@@ -38,6 +38,17 @@ const portfolioProjects = [
     thumb: "assets/latinmat.png",
   },
   {
+    id: "superball-lotto",
+    type: "live",
+    title: "SuperBall Lotto",
+    description:
+      "당첨 기록 기반 확률 번호 생성기. 생성/등록, 통계/패턴 분석, 히스토리/로그까지 한 화면에서 관리.",
+    url: "https://lottonumber.onrender.com/",
+    icon: "🎱",
+    tags: ["웹", "통계", "대시보드"],
+    thumb: null,
+  },
+  {
     id: "chajadream",
     type: "live",
     title: "반려동물 차자드림",
